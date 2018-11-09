@@ -1,5 +1,7 @@
 package protocol;
 
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.util.List;
 
 public class Protocol {
@@ -28,7 +30,7 @@ public class Protocol {
         return new Message(Protocol.GET_KEYS, username, policies);
     }
 
-    public static Message sendKeys(String publicKey, String privateKey, int error){
+    public static Message sendKeys(PublicKey publicKey, PrivateKey privateKey, int error){
         return new Message(Protocol.SEND_KEYS, error, publicKey, privateKey);
     }
 }
